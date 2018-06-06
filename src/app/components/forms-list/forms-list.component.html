@@ -1,0 +1,33 @@
+<mat-card layout-align="center center">
+  <table class="table table-hover table-bordered">
+    <thead>
+      <tr>
+        <td class="block">Form id</td>
+        <td class="block">Form name</td>
+        <td class="block">Submissions #</td>
+        <td class="block" colspan="3">Actions</td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let form of forms; let i = index">
+        <td style=" font-size: 0.7em">{{ form._id }}</td>
+        <td>{{ form.name }}</td>
+        <td>{{ form.subs_count }}</td>
+        <td>
+          <a mat-raised-button [routerLink]="['/submissions', form._id]" class="btn btn-primary">Watch Submissions</a>
+        
+          <a mat-raised-button [routerLink]="['/submit', form._id]" class="btn btn-primary">Submit</a>
+        
+          <a mat-raised-button (click)="deleteForm(form._id,i)" class="btn btn-danger"><mat-icon svgIcon="delete"></mat-icon></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <P>
+    <a mat-raised-button class="btn btn-primary" routerLink="/create">
+      <mat-icon svgIcon="clipboard-plus"></mat-icon>
+      Add new form
+    </a>
+  </P>
+</mat-card>

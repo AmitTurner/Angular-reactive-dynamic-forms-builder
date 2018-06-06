@@ -1,0 +1,22 @@
+
+
+table{
+  width: 100%;
+  align-content: center;
+  text-align: center;
+
+}
+
+tr td:last-child{
+  width:1%;
+  white-space:nowrap;
+}
+
+table thead{
+  background-color: #428bca;
+  color: white
+}
+
+mat-raised-button{
+  background-color: #428bca;
+}

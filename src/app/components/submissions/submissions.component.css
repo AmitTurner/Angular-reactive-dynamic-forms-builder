@@ -1,0 +1,19 @@
+
+
+table tr {
+    text-align: center;
+  }
+  
+  table thead{
+    background-color: #428bca;
+    color: white
+  }
+  
+  mat-raised-button{
+    background-color: #428bca;
+  }
+  
+  .error{
+      flood-color: red;
+  }
+  

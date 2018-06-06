@@ -1,0 +1,33 @@
+mat-form-field {
+    width: 100%;
+    align-content: center;
+  }
+  
+  
+    .mat-select, .mat-select-placeholder, .mat-select-trigger {
+      color:green !important;
+    }
+
+    .mat-card{
+      align-content: center !important;
+      align-items: center !important;
+      padding-left: 8%;
+      padding-right: 8%
+  }
+  .center{
+      width: 75%;
+      margin: 10px auto;
+      background-color: #c6dcef;
+      text-align: center;
+      align-content: center;
+    }
+    
+    .main-div{
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .error{
+        color:red;
+        font-size: 60%;
+    }

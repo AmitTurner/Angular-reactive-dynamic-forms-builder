@@ -1,0 +1,19 @@
+<mat-card layout-align="center center">
+    <table class="table table-hover table-bordered" >
+      <thead class="blue-grey lighten-4" >
+      <tr>
+          <td>submitter name</td>
+          <td *ngFor="let question of questions" >{{question.label}}</td>
+        
+      </tr>
+      </thead>
+    
+      <tbody>
+          <tr *ngFor="let submit of submissions">
+              <td>{{submit.name}}</td>
+              <td *ngFor="let key of questions_keys" >{{submit[key]}}</td>
+
+          </tr>
+      </tbody>
+    </table>
+    </mat-card>

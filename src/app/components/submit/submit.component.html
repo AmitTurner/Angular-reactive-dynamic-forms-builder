@@ -1,0 +1,88 @@
+<div *ngIf='form' class="main-div">
+<mat-card class=" center">
+    
+    <form  (ngSubmit)="onSubmit()" [formGroup]="form">
+        <mat-card-title>
+            {{name}}
+           </mat-card-title>
+  
+           
+  
+      <div *ngFor="let prop of questions">
+        <mat-card>
+          <mat-card-subtitle [attr.for]="prop">
+              {{prop.label}}
+          </mat-card-subtitle>
+  
+          <div [ngSwitch]="prop.type">
+  
+            <div *ngSwitchCase="prop.type === 'text' || prop.type === 'color' ||prop.type === 'email'  || prop.type === 'tel' || prop.type === 'number'? prop.type : ''"> 
+              <mat-form-field appearance="legacy">
+              <input matInput [required]="prop.required"
+                [formControlName]="prop.label" [id]="prop.label" [type]="prop.type">
+              </mat-form-field>
+            </div>
+  
+            <!-- <div *ngSwitchCase="'color'"> 
+                <mat-form-field appearance="legacy" [style.color]="input.value">
+                <input matInput [required]="prop.required" 
+                  [formControlName]="prop.label" [id]="prop.label" [type]="prop.type">
+                </mat-form-field>
+              </div> -->
+  
+            <div *ngSwitchCase="'date'">
+              <mat-form-field appearance="legacy" >
+                  <input matInput readonly [required]="prop.required" [matDatepicker]="picker" placeholder="Choose a date" [name]="prop.label" [formControlName]="prop.label">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+              </div>
+  
+            <div *ngSwitchCase="'radio'">
+              <label *ngFor="let option of prop.options">
+                <input type="radio" [name]="prop.key" [formControlName]="prop.key" [value]="option.value"> {{option.label}}
+              </label>
+            </div>
+  
+            <div *ngSwitchCase="'select'">
+              <select [formControlName]="prop.key">
+                <option *ngFor="let option of prop.options" [value]="option.value">
+                  {{ option.label }}
+                </option>
+              </select>
+            </div>
+          </div>
+  
+          <div class="error" *ngIf="form.get(prop.label).invalid && (form.get(prop.label).dirty || form.get(prop.label).touched)">
+            <div *ngIf="form.get(prop.label).errors.required">
+              {{ prop.label }} is required.
+            </div>
+            <div *ngIf="form.get(prop.label).errors.email">
+                {{ prop.label }} must be written as a proper email.
+              </div>
+  
+          </div>
+          
+        </mat-card>
+        <br>
+      </div>
+      
+      
+    <mat-card-actions align="end"> 
+        <button mat-button  (click)="reset()" type="button">Reset Form</button>
+        
+        </mat-card-actions> 
+        <mat-form-field appearance="legacy">
+            <input matInput required [formControlName]="'name'" [id]="name" [type]="text" placeholder="Enter your name">
+          </mat-form-field>
+          <br>
+            <button mat-raised-button color="green" type="submit" class="btn btn-success" [disabled]=!form.valid>Send</button>
+      </form>
+     
+  </mat-card>
+  <hr />
+  <strong>Form Value</strong>
+  <pre>{{ form.value | json }}</pre>
+  <strong>Form is valid:</strong> {{form.valid}}
+</div>
+  
