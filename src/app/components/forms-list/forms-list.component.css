@@ -4,7 +4,7 @@ table{
   width: 100%;
   align-content: center;
   text-align: center;
-
+  background-color: rgba(255, 255, 255, 0.7)
 }
 
 tr td:last-child{
@@ -17,6 +17,13 @@ table thead{
   color: white
 }
 
+
 mat-raised-button{
   background-color: #428bca;
 }
+
+mat-card{
+  background: transparent;
+  padding-top: 5%;
+}
+
