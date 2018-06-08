@@ -1,5 +1,9 @@
-a:link{
+a:link,a:visited{
     color:#FFFFFF;
+}
+
+a:hover,a:active{
+    color: whitesmoke
 }
 
 .mat-toolbar{

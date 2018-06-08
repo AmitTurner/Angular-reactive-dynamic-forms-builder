@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { NavComponent } from './components/nav/nav.component';
 import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
@@ -13,7 +12,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { FormsListComponent } from './components/forms-list/forms-list.component';
 import { AppComponent } from './app.component';
-import { IndexComponent } from './components/index/index.component';
 import { CreateComponent } from './components/create/create.component';
 import { SubmitComponent } from './components/submit/submit.component';
 import { AppMaterialModules } from './material.module';
@@ -25,7 +23,6 @@ import { SubmissionsComponent } from './components/submissions/submissions.compo
 @NgModule({
   declarations: [
     AppComponent,
-    IndexComponent,
     CreateComponent,
     SubmitComponent,
     NavComponent,

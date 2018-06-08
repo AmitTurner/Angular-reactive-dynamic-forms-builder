@@ -1,9 +1,9 @@
 import { FormsService } from './../../forms.service';
 import { Component, OnInit } from '@angular/core';
-//import { HttpClient } from '@angular/common/http';
-//import { Observable } from 'rxjs';
+
 import {ChangeDetectorRef} from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
+import { fadeAnimation } from '../../animations/router.animations';
 
 @Component({
   selector: 'app-forms-list',
