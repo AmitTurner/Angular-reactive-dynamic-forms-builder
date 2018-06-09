@@ -19,7 +19,7 @@ formRoutes.route('/add').post(function (req, res) {
 
 // Defined get data(index or listing) route
 formRoutes.route('/').get(function (req, res) {
-    console.log('getting you all forms');
+    //console.log('getting you all forms');
     Form.find(function (err, forms){
     if(err){
       console.log(err);
@@ -32,7 +32,7 @@ formRoutes.route('/').get(function (req, res) {
 
 // Defined get route
 formRoutes.route('/:id').get(function (req, res) {
-    console.log('im trying to get you a form');
+    //console.log('im trying to get you a form');
     
   var id = req.params.id;
   Form.findById(id, function (err, form){

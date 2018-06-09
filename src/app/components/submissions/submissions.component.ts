@@ -39,7 +39,7 @@ export class SubmissionsComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.service.getForm(params['id']).subscribe(res => {
         this.id = params['id'];
-        console.log(res);
+       // console.log(res);
         this.questions = res.questions;
         this.submissions = res.submissions;
         this.getkeys();

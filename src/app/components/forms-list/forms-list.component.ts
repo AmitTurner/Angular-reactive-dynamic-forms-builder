@@ -25,7 +25,7 @@ export class FormsListComponent  implements OnInit{
     this.service.getForms().subscribe(res => {
       this.forms = res;
       this.cd.markForCheck();
-      console.log(res);
+      // console.log(res);
     });
   }
 

@@ -105,10 +105,10 @@ export class CreateComponent implements AfterViewChecked {
     if (this.form.valid && !this.empty) {
       this.submitting = true;
       const data = this.form.getRawValue();
-      console.log(JSON.parse(JSON.stringify(data)));
+     // console.log(JSON.parse(JSON.stringify(data)));
       this.formservice.addForm(data);
 
-      console.log(JSON.parse(JSON.stringify(data)));
+     // console.log(JSON.parse(JSON.stringify(data)));
       this.form.reset();
       setTimeout(() => {
         this.submitting = false;
