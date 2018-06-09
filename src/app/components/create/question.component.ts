@@ -35,7 +35,7 @@ export class QuestionComponent {
   qType = ['text', 'color', 'date', 'email', 'tel', 'number', 'options'];
   first_option_added: boolean;
   selected: any;
-  
+
   constructor(private fb: FormBuilder) {
     this.first_option_added = true;
   }
