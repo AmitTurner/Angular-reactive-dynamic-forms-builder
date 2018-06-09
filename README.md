@@ -8,3 +8,5 @@ then run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 the mongoDB server is on the cloud (atlas mongoDB) so it will automatically connect, fetch and get info from it.
 
 for any further question you can get me by email: amitur91@gmail.com
+
+*If you see the 'potential security vulnerability', please ignore it. it is a known problem in angular about to be fixed by them further in the future.
