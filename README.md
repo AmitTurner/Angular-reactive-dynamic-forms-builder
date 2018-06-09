@@ -12,7 +12,7 @@ you must have npm and node.js installed.
 
 *the mongoDB database is in the cloud (atlas mongoDB) so it will automatically connect, fetch and get info from it. 
 
-some code parts are commented for future use. as I wanna keep on adding features.
+some code parts are commented for future use. as I would love to keep on adding features.
 
 for any further questions,
 amitur91@gmail.com
