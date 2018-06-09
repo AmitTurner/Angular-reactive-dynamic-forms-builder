@@ -1,7 +1,8 @@
 <mat-card class="main-div" class="mat-elevation-z0 main-card">
   <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
 
-    <mat-card >
+    <p>
+    <mat-card>
       <mat-card-title>
         <mat-form-field appearance="legacy">
           <mat-label>Form Name</mat-label>
@@ -9,49 +10,52 @@
         </mat-form-field>
       </mat-card-title>
     </mat-card>
-    <br>
+  </p>
 
     <div formArrayName="questions" >
-      <div *ngFor="let question of questions.controls; let i=index" [formGroupName]="i">
-
+      <div *ngFor="let question of form.controls.questions.controls; let i=index">
+          <p>
         <mat-card>
+            <mat-label>Question #{{i + 1}}</mat-label>
+          <!--questions dynamic array-->
+          <div [formGroupName]="i">
+          <question [group]=form.controls.questions.controls[i]></question>
+          </div>
 
-          <mat-card-subtitle>
-            <mat-form-field appearance="legacy">
-              <mat-label>Enter Question #{{i + 1}}</mat-label>
-              <input required matInput formControlName="label">
-            </mat-form-field>
-          </mat-card-subtitle>
-
-
-          <mat-form-field>
-            <mat-select required formControlName="type" placeholder="Select Input Type">
-              <mat-option *ngFor="let type of qType" [value]="type">{{type}}</mat-option>
-            </mat-select>
-          </mat-form-field>
-
-
-
-          <mat-checkbox formControlName="required">Required</mat-checkbox>
           <mat-card-actions align="end"> 
           <button mat-button  (click)="deleteTextQuestion(i)" type="button">Remove</button>
           </mat-card-actions> 
-
-        
         </mat-card>
-        <br>
+        </p>
       </div>
       <div align="center">
       <button mat-raised-button align=center class="btn btn-primary" (click)="addTextQuestion()" type="button">Add a new Question!</button>
     </div>
     </div>
 
-    Form Json: <pre>{{ form.value | json}}</pre>
-
     <div style="margin: 3em;" align="center">
-      <button mat-raised-button  type="submit" class="btn btn-success">Save</button>
+        <mat-error *ngIf=!form.valid >
+            <small>You forgot to fill some fields</small>
+          </mat-error>
+          <mat-error *ngIf=is_empty >
+              <small>Add at least one question!</small>
+            </mat-error>
+      <button mat-raised-button  type="submit" class="btn btn-success" [disabled]=!form.valid>Save</button>
       <button mat-raised-button  type="button" (click)="reset()" class="btn btn-danger">Reset Form</button>
     </div>
 
   </form>
 </mat-card>
+
+<div *ngIf="submitting1" class="loading-indicator">
+  <mat-spinner mode="indeterminate" color="accent"></mat-spinner>
+</div>
+
+<mat-expansion-panel class="json">
+    <mat-expansion-panel-header>
+      <mat-panel-description>
+        Watch the Json file
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <pre>{{ form.value | json}}</pre>
+  </mat-expansion-panel>

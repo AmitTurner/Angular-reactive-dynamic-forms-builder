@@ -1,5 +1,6 @@
 a:link,a:visited{
     color:#FFFFFF;
+    
 }
 
 a:hover,a:active{
@@ -8,5 +9,10 @@ a:hover,a:active{
 
 .mat-toolbar{
     background-color: #428bca;
-    color: white
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.mat-button{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

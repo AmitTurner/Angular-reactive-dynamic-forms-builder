@@ -1,4 +1,4 @@
-import {sequence, trigger, stagger, animate, style, group, query, transition, animateChild} from '@angular/animations';
+import {sequence, trigger, animate, style, group, query, transition, animateChild} from '@angular/animations';
 
 export const fadeAnimation = trigger('fadeAnimation', [
   transition('* => *', [
@@ -21,3 +21,22 @@ export const fadeAnimation = trigger('fadeAnimation', [
     ])
   ])
 ]);
+
+
+// export const moving = trigger('moving', [
+//   transition('* => *', [
+//     query('img',style({ transform: 'translateX(-100%)'})),
+//     query('img',
+//       stagger('600ms', [
+//         animate('900ms', style({ transform: 'translateX(0)'}))
+//     ]))
+//   ])
+// ])
+
+// export const fade = trigger('fade', [
+//   state('inactive', style({ transform: 'translateX(-10%)' })),
+//   state('active', style({transform: 'translateX(100%)' })),
+//   transition('* <=> *', [
+//    animate(2000)
+//   ])
+// ]);

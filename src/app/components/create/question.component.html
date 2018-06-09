@@ -1,0 +1,32 @@
+<div [formGroup]="questionGroup">
+  <mat-card-subtitle>
+    <mat-form-field appearance="legacy">
+      <mat-label>Enter Question</mat-label>
+      <input required matInput formControlName="label">
+    </mat-form-field>
+  </mat-card-subtitle>
+
+  <mat-form-field>
+    <mat-select required formControlName="type" placeholder="Select Input Type" [(value)]="selected">
+      <mat-option *ngFor="let type of qType" [value]="type">{{type}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+<div *ngIf="selected == 'options'">
+    <div *ngIf="true; then addfirstOption()"></div>
+  <div formArrayName="options"  >
+    <div *ngFor="let option of options.controls; let p=index" [formGroupName]="p">
+      
+        <mat-label>Option {{p + 1}}:  </mat-label>
+                <option-f [group]=options.controls[p]></option-f>
+                <button mat-mini-fab (click)="removeOption(p)" type="button" color="warn"><mat-icon svgIcon="minus" ></mat-icon></button>
+    </div>
+
+    <button mat-mini-fab (click)="addOption(p)" type="button" color="primary"><mat-icon svgIcon="plus" ></mat-icon></button>
+
+  </div>
+  </div>
+
+  <mat-checkbox formControlName="required">Required</mat-checkbox>
+
+
+</div>

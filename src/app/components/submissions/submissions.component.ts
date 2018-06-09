@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-submissions',
   templateUrl: './submissions.component.html',
-  styleUrls: ['./submissions.component.css']
+  styleUrls: ['../forms-list/forms-list.component.css']
 })
 export class SubmissionsComponent implements OnInit {
 
@@ -27,11 +27,6 @@ export class SubmissionsComponent implements OnInit {
           this.questions=res.questions;
           this.submissions=res.submissions;
           this.getkeys();
-          //formGroup["name"] = new FormControl('',Validators.required);
-          //this.questions.forEach((element,index )=> {
-          //formGroup[element.label] = new FormControl('', this.checkRequired(element.required));
-          //});
-          //this.form = new FormGroup(formGroup);
         });
       });
     }
@@ -41,10 +36,6 @@ export class SubmissionsComponent implements OnInit {
         if (element.label!="name")
           this.questions_keys.push(element.label);
       });
-      //console.log(this.questions);
-      //console.log(this.questions_keys);
-      //console.log(this.submissions);
-      
     }
 
 }

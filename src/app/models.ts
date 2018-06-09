@@ -1,7 +1,16 @@
 export class TextQ {
-    label = '';
-    type = '';
-    required = false;
+
+  label: string;
+  type: string;
+  options: string[];
+  required: boolean;
+
+  constructor(array){
+    this.label = '';
+    this.type = '';
+    this.options = array;
+    this.required = false;
+  }
   }
   
 

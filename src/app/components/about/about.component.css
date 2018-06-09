@@ -1,0 +1,7 @@
+.mat-card{
+    background-color: rgba(255, 255, 255, 0.5);
+    max-width: 500px;
+    width: 70%;
+    height: auto;
+      margin: 10px auto;    
+}

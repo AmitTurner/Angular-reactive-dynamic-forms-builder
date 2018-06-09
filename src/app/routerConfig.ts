@@ -5,6 +5,7 @@ import { SubmitComponent } from './components/submit/submit.component';
 
 import { FormsListComponent } from './components/forms-list/forms-list.component';
 import { SubmissionsComponent } from './components/submissions/submissions.component';
+import { AboutComponent } from './components/about/about.component';
 
 export const appRoutes: Routes = [
   { path: 'create', 
@@ -23,5 +24,8 @@ export const appRoutes: Routes = [
   },
   { path: '',
     component: FormsListComponent
-  }
+  },
+  { path: 'about',
+    component: AboutComponent
+  },
 ];

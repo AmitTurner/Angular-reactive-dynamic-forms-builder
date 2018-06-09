@@ -1,47 +1,70 @@
+import { OptionFComponent } from './option-f.component';
+import { QuestionComponent } from './question.component';
+
+import { TextQ } from './../../models';
 import { FormsService } from './../../forms.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ReactiveFormsModule, FormsModule, FormGroup, FormBuilder, Validator, FormControl, FormArray, Validators } from '@angular/forms';
-import { TextQ } from '../../models';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.css']
 })
-export class CreateComponent implements OnInit {
+export class CreateComponent{
   form: FormGroup;
+  val:number;
+  empty: boolean;
+  submitting: boolean;
 
-  qType = ['text', 'color', 'date', 'email', 'tel', 'number'];
-
-  constructor(private formservice: FormsService, private fb: FormBuilder) {
+  constructor(private formservice: FormsService, private fb: FormBuilder,private changeDetector: ChangeDetectorRef,private router: Router) {
     this.createForm();
+    this.empty=true;
+    this.submitting=false;
    }
    
-  ngOnInit() {
+   ngAfterViewChecked(){
+    this.changeDetector.detectChanges();
   }
 
   createForm() {
     this.form = this.fb.group({
-      name: '',
+      name: new FormControl('',Validators.required),
       questions: this.fb.array([]),
+    });
+  }
+
+  initQuestion(){
+    return this.fb.group({
+      label: new FormControl('',Validators.required),
+      type: new FormControl('',Validators.required),
+      options: this.fb.array([]),
+      required: false
     });
   }
 
   addTextQuestion() {
-    this.questions.push(this.fb.group(new TextQ()));
+    this.empty=false;
+    const questionsArray = <FormArray>this.form.controls['questions'];
+    const newQuestion = this.initQuestion();
+    questionsArray.push(newQuestion);
   }
 
+
   deleteTextQuestion(index) {
-    this.questions.removeAt(index);
+    const questionsArray = <FormArray>this.form.controls['questions'];
+    questionsArray.removeAt(index);
   }
+
 
   reset() {
     this.form = this.fb.group({
-      id: 0,
       name: '',
       questions: this.fb.array([]),
       submissions: 0,
     });
+    this.empty=true;
   }
 
   get questions(): FormArray {
@@ -54,21 +77,36 @@ export class CreateComponent implements OnInit {
 
 
   onSubmit() {
-    if (this.form.valid) {
+    if (this.form.valid && !this.empty) {
+      this.submitting=true;
     const data = this.form.getRawValue();
     console.log( JSON.parse(JSON.stringify(data)));
     this.formservice.addForm(data);
+    
       console.log( JSON.parse(JSON.stringify(data)));
       this.form.reset();
-    };
-    //const formObj = JSON.parse(JSON.stringify(data)); // {name: '', description: ''}
-    //this.form.reset();
-        //console.log(formObj);
+      setTimeout(()=>{ this.submitting=false; this.router.navigate(['index']); }, 2000)
+    }
+    else{
+      this.validateAllFormFields(this.form);
+    
     }
 
-  }
+  } 
 
+  validateAllFormFields(formGroup: FormGroup) {         //{1}
+  Object.keys(formGroup.controls).forEach(field => {  //{2}
+    const control = formGroup.get(field);             //{3}
+    if (control instanceof FormControl) {             //{4}
+      control.markAsTouched({ onlySelf: true });
+    } else if (control instanceof FormGroup) {        //{5}
+      this.validateAllFormFields(control);            //{6}
+    }
+  });
+}
 
+get is_empty(): boolean { return this.empty;}
 
+get submitting1() { return this.submitting; }
 
-
+}
