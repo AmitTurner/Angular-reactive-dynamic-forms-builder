@@ -3,10 +3,15 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
 
 ## Run development server
-First run 'node server.js' in the directory.
-then run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
-the mongoDB server is on the cloud (atlas mongoDB) so it will automatically connect, fetch and get info from it.
+download the src files.
 
-for any further question you can get me by email: amitur91@gmail.com
+go to the directory from cmd console and type "npm install", wait for it to download all files needed.
+then open 2 console windows, in one run 'node server.js' in the directory as well..
+then in the second run `ng serve` for a dev server. Navigate to `http://localhost:4200/` and enjoy!
+
+the mongoDB server is on the cloud (atlas mongoDB) so it will automatically connect, fetch and get info from it.
+some code parts are marked off for future use. as it can still be improved.
+
+for any further questions you can get me by email: amitur91@gmail.com
 
 *If you see the 'potential security vulnerability', please ignore it. it is a known problem in angular about to be fixed by them further in the future.
