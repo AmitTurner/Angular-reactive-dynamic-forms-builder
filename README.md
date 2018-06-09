@@ -1,18 +1,18 @@
 # FormBuilder 1.0 by Amit Turner for Wix 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
+you must have npm and node.js installed.
 
 ## Run development server
-download the src files.
+1) download the src files (or use git to clone to a desired directory on your computer)
+2) open terminal (cmd) in the src directory, and type "npm install", wait for it to download all files needed.
+3) type `node server.js`, and wait for the server to run and a message "database connected" will appear in terminal. keep the terminal open.
+4) Open additional terminal window in the src dir, run `ng serve --live-reload false` and wait for it to load.
+5)Navigate to `http://localhost:4200/` on Chrome and enjoy! (anything other than old explorers (11-) will work. but best used on chrome.)
 
-go to the directory from cmd console and type "npm install", wait for it to download all files needed.
-then open 2 console windows, in one run 'node server.js' in the directory as well.. you will see "database connected" message.
+*the mongoDB database is in the cloud (atlas mongoDB) so it will automatically connect, fetch and get info from it. 
 
-then in the second run `ng serve` and wait for it to load for a dev server. Navigate to `http://localhost:4200/` and enjoy!
+some code parts are commented for future use. as I would love to keep on adding features.
 
-the mongoDB server is on the cloud (atlas mongoDB) so it will automatically connect, fetch and get info from it.
-some code parts are marked off for future use. as it can still be improved.
-
-for any further questions you can get me by email: amitur91@gmail.com
-
-*If you see the 'potential security vulnerability', please ignore it. it is a known problem in angular about to be fixed by them further in the future.
+for any further questions,
+amitur91@gmail.com
