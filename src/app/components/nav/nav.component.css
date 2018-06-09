@@ -11,9 +11,4 @@ a:active {
 .mat-toolbar {
   background-color: #428bca;
   color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.mat-button {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

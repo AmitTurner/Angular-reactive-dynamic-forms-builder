@@ -36,6 +36,7 @@ import {
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.css']
 })
+
 export class CreateComponent implements AfterViewChecked {
   form: FormGroup;
   val: number;
@@ -106,19 +107,16 @@ export class CreateComponent implements AfterViewChecked {
       this.submitting = true;
       const data = this.form.getRawValue();
      // console.log(JSON.parse(JSON.stringify(data)));
-      this.formservice.addForm(data);
-
+      this.formservice.addForm(data).subscribe(
+        success => {  this.submitting = false;
+                      this.router.navigate(['index']); },  // See new method below, just ignore `success`.
+            // error => // handleError()
+        );
      // console.log(JSON.parse(JSON.stringify(data)));
-      this.form.reset();
-      setTimeout(() => {
-        this.submitting = false;
-        this.router.navigate(['index']);
-      }, 2000);
+      // this.form.reset();
     } else {
       this.validateAllFormFields(this.form);
-
     }
-
   }
 
   validateAllFormFields(formGroup: FormGroup) {

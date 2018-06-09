@@ -28,11 +28,11 @@ export class FormsService {
   result: any;
   constructor(private http: HttpClient) {}
 
-  addForm(data) {
+  public addForm(data) {
     const uri = 'http://localhost:4000/forms/add';
     const obj = data;
-    this.http.post(uri, obj)
-      .subscribe(res => console.log('Done'));
+    return this.http.post(uri, obj);
+     // .subscribe(res => console.log('Done'));
   }
 
   deleteForm(id) {
@@ -64,8 +64,8 @@ export class FormsService {
   submitForm(id, data) {
     const uri = 'http://localhost:4000/forms/submit/' + id;
     const obj = data;
-    this.http.post(uri, obj)
-      .subscribe(res => console.log('Done'));
+     return this.http.post(uri, obj);
+      // .subscribe(res => console.log('Done'));
   }
 
   errorHandler(error: any): void {

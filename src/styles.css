@@ -33,3 +33,7 @@ a.mat-menu-item>mat-icon {
   bottom: 0;
   z-index: -1;
 }
+
+*:not(.fa) {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

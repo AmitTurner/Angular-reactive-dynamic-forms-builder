@@ -18,14 +18,14 @@
       
         <mat-label>Option {{p + 1}}:  </mat-label>
                 <app-option [group]=options.controls[p]></app-option>
-                <button mat-mini-fab (click)="removeOption(p)" type="button" color="warn"><mat-icon svgIcon="minus" ></mat-icon></button>
+                <button mat-icon-button (click)="removeOption(p)" color="warn"><mat-icon svgIcon="delete" ></mat-icon></button>
     </div>
 
-    <button mat-mini-fab (click)="addOption(p)" type="button" color="primary"><mat-icon svgIcon="plus" ></mat-icon></button>
+    <button mat-mini-fab  type="button" (click)="addOption(p)" color="primary"><mat-icon svgIcon="plus"></mat-icon></button>
 
   </div>
   </div>
-
+  <br>
   <mat-checkbox formControlName="required">Required</mat-checkbox>
 
 

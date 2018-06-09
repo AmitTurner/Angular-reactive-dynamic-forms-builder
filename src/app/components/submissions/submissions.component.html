@@ -11,7 +11,13 @@
       <tr *ngFor="let submit of submissions">
         <td style="background-color: #33648f;
         color:white;">{{submit.name}}</td>
-        <td *ngFor="let key of questions_keys">{{submit[key]}}</td>
+        <td *ngFor="let question of questions">
+         <div *ngIf="question.type=='text' || question.type=='email' || question.type=='tel' || question.type=='number'|| question.type=='options'">
+            {{submit[question.label]}}</div>
+         <div *ngIf="question.type=='color'"> <button disabled mat-fab [style.background]=submit[question.label]></button>	</div>
+         <div *ngIf="question.type=='date'"> {{submit[question.label] | slice:0:10}}</div>
+         
+        </td>
 
       </tr>
     </tbody>

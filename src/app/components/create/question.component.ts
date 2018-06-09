@@ -32,7 +32,7 @@ import {
 })
 export class QuestionComponent {
   @Input('group') questionGroup: FormGroup;
-  qType = ['text', 'color', 'date', 'email', 'tel', 'number', 'options'];
+  qType = ['text', 'options', 'color', 'date', 'email', 'tel', 'number'];
   first_option_added: boolean;
   selected: any;
 

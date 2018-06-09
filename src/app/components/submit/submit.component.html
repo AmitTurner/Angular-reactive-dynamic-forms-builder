@@ -20,7 +20,7 @@
               </mat-form-field>
             </div>
 
-            <div *ngSwitchCase="'options'">
+            <div *ngSwitchCase="'options'" layout-align="start">
               <mat-radio-group [required]="question.required" [formControlName]="question.label" class="radio-group">
                 <mat-radio-button *ngFor="let option of question.options" [value]="option.option">
                   {{option.option}}

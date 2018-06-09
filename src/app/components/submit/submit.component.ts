@@ -84,13 +84,12 @@ export class SubmitComponent implements OnInit {
       this.submitting = true;
       const data = this.form.getRawValue();
     //  console.log(JSON.parse(JSON.stringify(data)));
-      this.service.submitForm(this.id, data);
+      this.service.submitForm(this.id, data).subscribe(
+        success => {  this.submitting = false;
+                      this.router.navigate(['index']);
+                      this.form.reset(); }
+        );
     //  console.log('Form Submitted!');
-      this.form.reset();
-      setTimeout(() => {
-        this.submitting = false;
-        this.router.navigate(['index']);
-      }, 2000);
     }
   }
 

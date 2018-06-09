@@ -22,8 +22,8 @@
               <app-question [group]=form.controls.questions.controls[i]></app-question>
             </div>
 
-            <mat-card-actions align="end">
-              <button mat-button (click)="deleteTextQuestion(i)" type="button">Remove</button>
+            <mat-card-actions align="end" style="padding-bottom: 10px;">
+              <button mat-button (click)="deleteTextQuestion(i)" type="button"><mat-icon svgIcon="close-circle"></mat-icon></button>
             </mat-card-actions>
           </mat-card>
         </p>
@@ -40,6 +40,7 @@
       <mat-error *ngIf=is_empty>
         <small>Add at least one question!</small>
       </mat-error>
+      <p></p>
       <button mat-raised-button type="submit" class="btn btn-success" [disabled]='!form.valid || is_empty'>Save</button>
       <button mat-raised-button type="button" (click)="reset()" class="btn btn-danger">Reset Form</button>
     </div>

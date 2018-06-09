@@ -20,9 +20,10 @@
   font-size: 60%;
 }
 
-.radio-group {
+.mat-radio-group {
   display: inline-flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .json {
@@ -30,8 +31,6 @@
   padding-right: 8%;
   background-color: transparent
 }
-
-/* Absolute Center Spinner */
 
 .loading-indicator {
   position: fixed;
@@ -45,8 +44,6 @@
   bottom: 0;
   right: 0;
 }
-
-/* Transparent Overlay */
 
 .loading-indicator:before {
   content: '';

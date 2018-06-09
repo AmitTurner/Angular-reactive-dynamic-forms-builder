@@ -11,7 +11,7 @@ import { fadeAnimation } from '../../animations/router.animations';
   styleUrls: ['./forms-list.component.css'],
 })
 
-export class FormsListComponent  implements OnInit{
+export class FormsListComponent  implements OnInit {
 
   forms: any;
   constructor(private service: FormsService,
@@ -29,7 +29,7 @@ export class FormsListComponent  implements OnInit{
     });
   }
 
-  deleteForm(id, i){
+  deleteForm(id, i) {
     this.service.deleteForm(id).subscribe(res => {
       console.log('Deleted');
       this.cd.markForCheck();
