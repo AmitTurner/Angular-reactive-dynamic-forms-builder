@@ -9,7 +9,8 @@
 
     <tbody>
       <tr *ngFor="let submit of submissions">
-        <td>{{submit.name}}</td>
+        <td style="background-color: #33648f;
+        color:white;">{{submit.name}}</td>
         <td *ngFor="let key of questions_keys">{{submit[key]}}</td>
 
       </tr>
