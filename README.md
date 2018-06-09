@@ -6,8 +6,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 download the src files.
 
 go to the directory from cmd console and type "npm install", wait for it to download all files needed.
-then open 2 console windows, in one run 'node server.js' in the directory as well..
-then in the second run `ng serve` for a dev server. Navigate to `http://localhost:4200/` and enjoy!
+then open 2 console windows, in one run 'node server.js' in the directory as well.. you will see "database connected" message.
+
+then in the second run `ng serve` and wait for it to load for a dev server. Navigate to `http://localhost:4200/` and enjoy!
 
 the mongoDB server is on the cloud (atlas mongoDB) so it will automatically connect, fetch and get info from it.
 some code parts are marked off for future use. as it can still be improved.
