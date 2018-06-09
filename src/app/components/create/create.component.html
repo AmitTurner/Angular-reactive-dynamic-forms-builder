@@ -1,5 +1,5 @@
 <mat-card class="main-div" class="mat-elevation-z0 main-card">
-  <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
     <p>
       <mat-card>
@@ -13,7 +13,7 @@
     </p>
 
     <div formArrayName="questions">
-      <div *ngFor="let question of form.controls.questions.controls; let i=index">
+      <div *ngFor="let question of getControls(form, 'questions'); let i=index">
         <p>
           <mat-card>
             <mat-label>Question #{{i + 1}}</mat-label>
