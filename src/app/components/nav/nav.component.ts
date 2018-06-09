@@ -1,5 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { fadeAnimation } from '../../animations/router.animations';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import {
+  fadeAnimation
+} from '../../animations/router.animations';
 
 @Component({
   selector: 'app-nav',
@@ -7,11 +12,6 @@ import { fadeAnimation } from '../../animations/router.animations';
   styleUrls: ['./nav.component.css'],
   animations: [fadeAnimation]
 })
-export class NavComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class NavComponent {
+  constructor() {}
 }

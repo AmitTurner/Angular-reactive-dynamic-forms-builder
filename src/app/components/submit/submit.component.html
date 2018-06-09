@@ -6,7 +6,6 @@
         {{name}}
       </mat-card-title>
 
-
       <div *ngFor="let question of questions">
         <mat-card>
           <mat-card-subtitle [attr.for]="question">
@@ -33,6 +32,7 @@
               <mat-form-field appearance="legacy">
                 <input matInput readonly [required]="question.required" [matDatepicker]="picker" placeholder="Choose a date" [name]="question.label"
                   [formControlName]="question.label">
+
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
               </mat-form-field>
@@ -46,9 +46,7 @@
             <div *ngIf="form.get(question.label).errors.email">
               {{ question.label }} must be written as a proper email.
             </div>
-
           </div>
-
         </mat-card>
         <br>
       </div>
@@ -67,9 +65,9 @@
       </mat-form-field>
 
       <p>
-      <button mat-raised-button color="green" type="submit" class="btn btn-success" [disabled]=!form.valid>Send</button>
+        <button mat-raised-button color="green" type="submit" class="btn btn-success" [disabled]=!form.valid>Send</button>
       </p>
-      
+
     </form>
 
   </mat-card>

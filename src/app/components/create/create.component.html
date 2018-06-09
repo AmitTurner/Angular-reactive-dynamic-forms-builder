@@ -2,46 +2,46 @@
   <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
 
     <p>
-    <mat-card>
-      <mat-card-title>
-        <mat-form-field appearance="legacy">
-          <mat-label>Form Name</mat-label>
-          <input required matInput formControlName="name">
-        </mat-form-field>
-      </mat-card-title>
-    </mat-card>
-  </p>
+      <mat-card>
+        <mat-card-title>
+          <mat-form-field appearance="legacy">
+            <mat-label>Form Name</mat-label>
+            <input required matInput formControlName="name">
+          </mat-form-field>
+        </mat-card-title>
+      </mat-card>
+    </p>
 
-    <div formArrayName="questions" >
+    <div formArrayName="questions">
       <div *ngFor="let question of form.controls.questions.controls; let i=index">
-          <p>
-        <mat-card>
+        <p>
+          <mat-card>
             <mat-label>Question #{{i + 1}}</mat-label>
-          <!--questions dynamic array-->
-          <div [formGroupName]="i">
-          <question [group]=form.controls.questions.controls[i]></question>
-          </div>
+            <!--questions dynamic array-->
+            <div [formGroupName]="i">
+              <app-question [group]=form.controls.questions.controls[i]></app-question>
+            </div>
 
-          <mat-card-actions align="end"> 
-          <button mat-button  (click)="deleteTextQuestion(i)" type="button">Remove</button>
-          </mat-card-actions> 
-        </mat-card>
+            <mat-card-actions align="end">
+              <button mat-button (click)="deleteTextQuestion(i)" type="button">Remove</button>
+            </mat-card-actions>
+          </mat-card>
         </p>
       </div>
       <div align="center">
-      <button mat-raised-button align=center class="btn btn-primary" (click)="addTextQuestion()" type="button">Add a new Question!</button>
-    </div>
+        <button mat-raised-button align=center class="btn btn-primary" (click)="addTextQuestion()" type="button">Add a new Question!</button>
+      </div>
     </div>
 
     <div style="margin: 3em;" align="center">
-        <mat-error *ngIf=!form.valid >
-            <small>You forgot to fill some fields</small>
-          </mat-error>
-          <mat-error *ngIf=is_empty >
-              <small>Add at least one question!</small>
-            </mat-error>
-      <button mat-raised-button  type="submit" class="btn btn-success" [disabled]=!form.valid>Save</button>
-      <button mat-raised-button  type="button" (click)="reset()" class="btn btn-danger">Reset Form</button>
+      <mat-error *ngIf=!form.valid>
+        <small>You forgot to fill some fields</small>
+      </mat-error>
+      <mat-error *ngIf=is_empty>
+        <small>Add at least one question!</small>
+      </mat-error>
+      <button mat-raised-button type="submit" class="btn btn-success" [disabled]=!form.valid>Save</button>
+      <button mat-raised-button type="button" (click)="reset()" class="btn btn-danger">Reset Form</button>
     </div>
 
   </form>
@@ -52,10 +52,10 @@
 </div>
 
 <mat-expansion-panel class="json">
-    <mat-expansion-panel-header>
-      <mat-panel-description>
-        Watch the Json file
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <pre>{{ form.value | json}}</pre>
-  </mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-description>
+      Watch the Json file
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <pre>{{ form.value | json}}</pre>
+</mat-expansion-panel>

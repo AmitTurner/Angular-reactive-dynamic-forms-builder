@@ -1,18 +1,19 @@
-a:link,a:visited{
-    color:#FFFFFF;
-    
+a:link,
+a:visited {
+  color: white;
 }
 
-a:hover,a:active{
-    color: whitesmoke
+a:hover,
+a:active {
+  color: white
 }
 
-.mat-toolbar{
-    background-color: #428bca;
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.mat-toolbar {
+  background-color: #428bca;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.mat-button{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.mat-button {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

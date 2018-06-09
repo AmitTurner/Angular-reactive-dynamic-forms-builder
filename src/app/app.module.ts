@@ -19,6 +19,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsService } from './forms.service';
 import { SubmissionsComponent } from './components/submissions/submissions.component';
 
+import { MatMomentDateModule, MAT_MOMENT_DATE_FORMATS } from '@angular/material-moment-adapter';
+import { MatDatepickerModule, MatFormFieldModule, MatInputModule, MAT_DATE_FORMATS, DateAdapter, MAT_DATE_LOCALE } from '@angular/material';
+import { MomentUtcDateAdapter } from './moment-utc-date-adapter';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,19 +38,22 @@ import { SubmissionsComponent } from './components/submissions/submissions.compo
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule, 
+    FormsModule,
     ReactiveFormsModule,
-    CdkTableModule, 
+    CdkTableModule,
     AppMaterialModules,
     HttpClientModule,
     BrowserAnimationsModule,
   ],
-  providers: [FormsService],
+  providers: [FormsService,
+    { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },
+    { provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS },
+    { provide: DateAdapter, useClass: MomentUtcDateAdapter }, ],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
+export class AppModule {
 
-  constructor(matIconRegistry: MatIconRegistry, domSanitizer: DomSanitizer){
-    matIconRegistry.addSvgIconSet(domSanitizer.bypassSecurityTrustResourceUrl('./assets/mdi.svg')); // Or whatever path you placed mdi.svg at
+  constructor(matIconRegistry: MatIconRegistry, domSanitizer: DomSanitizer) {
+    matIconRegistry.addSvgIconSet(domSanitizer.bypassSecurityTrustResourceUrl('./assets/mdi.svg'));
   }
 }

@@ -1,15 +1,19 @@
+import {  Routes} from '@angular/router';
+import {  CreateComponent} from './components/create/create.component';
+import {  SubmitComponent} from './components/submit/submit.component';
+import {
+  FormsListComponent
+} from './components/forms-list/forms-list.component';
+import {
+  SubmissionsComponent
+} from './components/submissions/submissions.component';
+import {
+  AboutComponent
+} from './components/about/about.component';
 
-import { Routes } from '@angular/router';
-import { CreateComponent } from './components/create/create.component';
-import { SubmitComponent } from './components/submit/submit.component';
-
-import { FormsListComponent } from './components/forms-list/forms-list.component';
-import { SubmissionsComponent } from './components/submissions/submissions.component';
-import { AboutComponent } from './components/about/about.component';
-
-export const appRoutes: Routes = [
-  { path: 'create', 
-    component: CreateComponent 
+export const appRoutes: Routes = [{
+    path: 'create',
+    component: CreateComponent
   },
   {
     path: 'submit/:id',
@@ -19,13 +23,16 @@ export const appRoutes: Routes = [
     path: 'submissions/:id',
     component: SubmissionsComponent
   },
-  { path: 'index',
+  {
+    path: 'index',
     component: FormsListComponent
   },
-  { path: '',
+  {
+    path: '',
     component: FormsListComponent
   },
-  { path: 'about',
+  {
+    path: 'about',
     component: AboutComponent
   },
 ];

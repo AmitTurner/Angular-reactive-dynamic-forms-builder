@@ -29,11 +29,11 @@ export class FormsListComponent  implements OnInit{
     });
   }
 
-  deleteForm(id,i){
+  deleteForm(id, i){
     this.service.deleteForm(id).subscribe(res => {
-      console.log("Deleted");
+      console.log('Deleted');
       this.cd.markForCheck();
-      this.forms.splice(i,1);
+      this.forms.splice(i, 1);
       });
     }
 }

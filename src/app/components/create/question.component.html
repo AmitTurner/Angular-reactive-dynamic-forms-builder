@@ -17,7 +17,7 @@
     <div *ngFor="let option of options.controls; let p=index" [formGroupName]="p">
       
         <mat-label>Option {{p + 1}}:  </mat-label>
-                <option-f [group]=options.controls[p]></option-f>
+                <app-option [group]=options.controls[p]></app-option>
                 <button mat-mini-fab (click)="removeOption(p)" type="button" color="warn"><mat-icon svgIcon="minus" ></mat-icon></button>
     </div>
 

@@ -16,7 +16,6 @@
         <td>{{ form.subs_count }}</td>
         <td>
           <a mat-raised-button [routerLink]="['/submissions', form._id]" class="btn btn-primary">Watch Submissions</a>
-        
           <a mat-raised-button [routerLink]="['/submit', form._id]" class="btn btn-primary">Submit</a>
           <a mat-raised-button (click)="deleteForm(form._id,i)" class="btn btn-danger"><mat-icon svgIcon="delete"></mat-icon></a>
         </td>
