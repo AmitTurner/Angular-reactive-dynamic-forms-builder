@@ -39,6 +39,10 @@
             </div>
           </div>
 
+          <div class="error" *ngIf="question.required && !form.get(question.label).touched">
+            this field is required
+          </div>
+
           <div class="error" *ngIf="form.get(question.label).invalid && (form.get(question.label).dirty || form.get(question.label).touched)">
             <div *ngIf="form.get(question.label).errors.required">
               {{ question.label }} is required.
@@ -52,7 +56,6 @@
       </div>
 
       <div *ngIf="submitting1" class="loading-indicator">
-        Submitting Form..
         <mat-spinner mode="indeterminate" color="accent"></mat-spinner>
       </div>
 
