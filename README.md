@@ -8,7 +8,8 @@ you must have npm and node.js installed.
 2) open terminal (cmd) in the src directory, and type "npm install", wait for it to download all files needed.
 3) type `node server.js`, and wait for the server to run and a message "database connected" will appear in terminal. keep the terminal open.
 4) Open additional terminal window in the src dir, run `ng serve --live-reload false` and wait for it to load.
-5)Navigate to `http://localhost:4200/` on Chrome and enjoy! (anything other than old explorers (11-) will work. but best used on chrome.)
+5)Navigate to `http://127.0.0.1:4200/` on Chrome and enjoy! (anything other than old explorers (11-) will work. but best used on chrome.)
+*(recaptcha wont work with the normal 'localhost:4200' address, take notice)
 
 *the mongoDB database is in the cloud (atlas mongoDB) so it will automatically connect, fetch and get info from it. 
 
