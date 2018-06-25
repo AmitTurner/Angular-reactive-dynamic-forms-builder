@@ -31,6 +31,7 @@
     "md-color-picker": "^0.2.6",
     "moment": "^2.22.2",
     "mongoose": "^5.1.4",
+    "ng-recaptcha": "^4.0.0-beta.1",
     "nodemon": "^1.17.5",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"

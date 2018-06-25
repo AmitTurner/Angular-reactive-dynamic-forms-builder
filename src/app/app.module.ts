@@ -19,10 +19,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsService } from './forms.service';
 import { SubmissionsComponent } from './components/submissions/submissions.component';
 
-import { MatMomentDateModule, MAT_MOMENT_DATE_FORMATS } from '@angular/material-moment-adapter';
-import { MatDatepickerModule, MatFormFieldModule, MatInputModule, MAT_DATE_FORMATS, DateAdapter, MAT_DATE_LOCALE } from '@angular/material';
+import { MAT_MOMENT_DATE_FORMATS } from '@angular/material-moment-adapter';
+import { MAT_DATE_FORMATS, DateAdapter, MAT_DATE_LOCALE } from '@angular/material';
 import { MomentUtcDateAdapter } from './moment-utc-date-adapter';
 
+import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
+import { RecaptchaModule } from 'ng-recaptcha';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +46,8 @@ import { MomentUtcDateAdapter } from './moment-utc-date-adapter';
     AppMaterialModules,
     HttpClientModule,
     BrowserAnimationsModule,
+    RecaptchaFormsModule,
+    RecaptchaModule.forRoot(),
   ],
   providers: [FormsService,
     { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },

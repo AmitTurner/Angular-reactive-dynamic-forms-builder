@@ -50,6 +50,7 @@ export class SubmitComponent implements OnInit {
         this.questions.forEach((element, index) => {
           formGroup[element.label] = new FormControl('', this.checkRequired(element.required, element.type));
         });
+        formGroup['captcha'] = new FormControl('', Validators.required);
         this.form = new FormGroup(formGroup);
       });
     });

@@ -2,7 +2,6 @@ var express = require('express');
 var app = express();
 var formRoutes = express.Router();
 
-// Require Item model in our routes module
 var Form = require('../models/Form');
 
 // Defined store route

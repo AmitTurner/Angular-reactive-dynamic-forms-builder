@@ -55,6 +55,8 @@
         <br>
       </div>
 
+      
+
       <div *ngIf="submitting1" class="loading-indicator">
         <mat-spinner mode="indeterminate" color="accent"></mat-spinner>
       </div>
@@ -67,7 +69,14 @@
         <input matInput required [formControlName]="'name'" [id]="name" [type]="text" placeholder="Enter your name">
       </mat-form-field>
 
+      <div class="captcha"><re-captcha
+        name="captcha"
+        required
+        siteKey="6LcNrWAUAAAAAKMEmCRmmQ9aqRk7MXqXo0iD5Qqb"
+        [formControlName]="'captcha'"
+        ></re-captcha></div>
       <p>
+          
         <button mat-raised-button color="green" type="submit" class="btn btn-success" [disabled]=!form.valid>Send</button>
       </p>
 

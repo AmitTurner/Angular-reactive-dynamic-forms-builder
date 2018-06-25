@@ -15,6 +15,11 @@
   align-items: center;
 }
 
+.captcha {
+  max-width:304px; margin:0px auto;
+  padding-bottom: 2%;
+}
+
 .error {
   color: red;
   font-size: 60%;
