@@ -1,8 +1,11 @@
-# FormBuilder 1.0 
-
+# Angular reactive dynamic forms builder
+A system built using Angular for front and MongoDB as back, imitating the functionality of Google Forms.
+Allowing the user to create forms by choosing input type, question text and answers options in case the input is 'select' type. 
+Other users can fill the form while the creator can access the users input table. The project was designed with pixel art in mind and aimed for simplicity. This was my first Angular project.
+    
+ 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
 you must have npm and node.js installed.
-
 ## Run development server
 1) download the src files (or use git to clone to a desired directory on your computer)
 2) open terminal (cmd) in the src directory, and type "npm install", wait for it to download all files needed.
